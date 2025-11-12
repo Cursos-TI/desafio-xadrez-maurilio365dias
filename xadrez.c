@@ -6,6 +6,9 @@ int main() {
     const int CASAS_TORRE = 5;
     const int CASAS_BISPO = 5;
     const int CASAS_RAINHA = 8;
+     //  movimento do Cavalo
+    const int MOV_CAVALO_VERTICAL = 2;
+    const int MOV_CAVALO_HORIZONTAL = 1;
 
     printf("--- Desafio de Xadrez: Simulacao de Movimentos ---\n\n");
 
@@ -33,21 +36,22 @@ int main() {
     }
     printf("\n");// Linha
 
-    
-    // 3. Movimentação da Rainha 
-    // Requisito: Simular 8 casas para a esquerda.
-    printf("[RAINHA] Movendo %d casas para a esquerda (usando do-while):\n", CASAS_RAINHA);
-    int contador_rainha = 0;
-    if (CASAS_RAINHA > 0) {
-        do {
-            printf("Esquerda\n");
-            contador_rainha++;
-        } while (contador_rainha < CASAS_RAINHA); 
-    } else {
-        printf("A Rainha nao se moveu (0 casas).\n");
+
+    // 4. Movimentação do Cavalo 
+    printf("[CAVALO] Movendo em 'L' (2 Baixo, 1 Esquerda) (usando loops aninhados):\n");
+    // Loop externo 
+        for (int i = 0; i < MOV_CAVALO_VERTICAL; i++) {
+        printf("Baixo\n");
+    }
+    // Loop interno/secundário 
+    int contador_horizontal = 0;
+    while (contador_horizontal < MOV_CAVALO_HORIZONTAL) {
+        printf("Esquerda\n");
+        contador_horizontal++;
     }
 
     printf("\n--- Fim do Programa ---\n");
 
     return 0;
+
 }
